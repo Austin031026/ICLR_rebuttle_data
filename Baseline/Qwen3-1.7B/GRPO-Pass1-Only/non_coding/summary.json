@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "decoding": "qwen-thinking",
+  "thinking": true,
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42
+  },
+  "split": "full",
+  "backend": "vllm",
+  "max_examples_per_benchmark": 512,
+  "selection": "first_rows_before_sharding",
+  "models": {
+    "grpo_round8": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/grpo_outputs/qwen3_1p7b_grpo_rollout2048_g6_workers4_b32_steps8_s42/global_step_8/model",
+      "benchmarks": {
+        "math500": {
+          "schema_version": 1,
+          "examples": 500,
+          "scored_examples": 500,
+          "accuracy": 0.882,
+          "mean_response_tokens": 5475.564,
+          "mean_prompt_tokens": 98.94,
+          "hit_cap_fraction": 0.002
+        },
+        "aime25": {
+          "schema_version": 1,
+          "examples": 30,
+          "scored_examples": 30,
+          "accuracy": 0.4,
+          "mean_response_tokens": 17138.266666666666,
+          "mean_prompt_tokens": 216.8,
+          "hit_cap_fraction": 0.06666666666666667
+        },
+        "olympiadbench": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.65625,
+          "mean_response_tokens": 11185.89453125,
+          "mean_prompt_tokens": 130.35546875,
+          "hit_cap_fraction": 0.017578125
+        },
+        "mmlu_pro": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.576171875,
+          "mean_response_tokens": 3249.6328125,
+          "mean_prompt_tokens": 210.546875,
+          "hit_cap_fraction": 0.0
+        },
+        "gpqa_diamond": {
+          "schema_version": 1,
+          "examples": 198,
+          "scored_examples": 198,
+          "accuracy": 0.40404040404040403,
+          "mean_response_tokens": 8182.949494949495,
+          "mean_prompt_tokens": 245.65656565656565,
+          "hit_cap_fraction": 0.005050505050505051
+        }
+      },
+      "macro_accuracy": 0.5836924558080808
+    }
+  }
+}

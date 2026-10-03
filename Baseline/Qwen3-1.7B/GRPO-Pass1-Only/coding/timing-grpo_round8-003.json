@@ -1,0 +1,10 @@
+{
+  "backend": "vllm",
+  "model": "grpo_round8",
+  "shard_id": 3,
+  "examples": 29,
+  "generation_seconds": 628.6168244748842,
+  "scoring_seconds": 0.1794413309544325,
+  "response_tokens": 460463,
+  "generation_tokens_per_second": 732.5018708887537
+}
