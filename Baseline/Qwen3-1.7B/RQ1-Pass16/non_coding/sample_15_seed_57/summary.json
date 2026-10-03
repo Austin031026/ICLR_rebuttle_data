@@ -1,0 +1,311 @@
+{
+  "schema_version": 1,
+  "decoding": "qwen-thinking",
+  "thinking": true,
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 57
+  },
+  "split": "full",
+  "backend": "vllm",
+  "max_examples_per_benchmark": 512,
+  "selection": "first_rows_before_sharding",
+  "models": {
+    "base": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Rona_Lulu/Lulu_outputs/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "benchmarks": {
+        "math500": {
+          "schema_version": 1,
+          "examples": 500,
+          "scored_examples": 500,
+          "accuracy": 0.896,
+          "mean_response_tokens": 5488.21,
+          "mean_prompt_tokens": 98.94,
+          "hit_cap_fraction": 0.002
+        },
+        "aime25": {
+          "schema_version": 1,
+          "examples": 30,
+          "scored_examples": 30,
+          "accuracy": 0.36666666666666664,
+          "mean_response_tokens": 15822.566666666668,
+          "mean_prompt_tokens": 216.8,
+          "hit_cap_fraction": 0.03333333333333333
+        },
+        "olympiadbench": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.642578125,
+          "mean_response_tokens": 11162.068359375,
+          "mean_prompt_tokens": 130.35546875,
+          "hit_cap_fraction": 0.029296875
+        },
+        "mmlu_pro": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.568359375,
+          "mean_response_tokens": 3184.705078125,
+          "mean_prompt_tokens": 210.546875,
+          "hit_cap_fraction": 0.0
+        },
+        "gpqa_diamond": {
+          "schema_version": 1,
+          "examples": 198,
+          "scored_examples": 198,
+          "accuracy": 0.37373737373737376,
+          "mean_response_tokens": 8248.979797979799,
+          "mean_prompt_tokens": 245.65656565656565,
+          "hit_cap_fraction": 0.0
+        }
+      },
+      "macro_accuracy": 0.5694683080808081
+    },
+    "control_ref_round4": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/no_reasoning_control_ref_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004",
+      "benchmarks": {
+        "math500": {
+          "schema_version": 1,
+          "examples": 500,
+          "scored_examples": 500,
+          "accuracy": 0.884,
+          "mean_response_tokens": 5627.28,
+          "mean_prompt_tokens": 98.94,
+          "hit_cap_fraction": 0.006,
+          "vs_base": {
+            "paired_examples": 500,
+            "accuracy_delta": -0.012,
+            "rescues": 11,
+            "degradations": 17
+          }
+        },
+        "aime25": {
+          "schema_version": 1,
+          "examples": 30,
+          "scored_examples": 30,
+          "accuracy": 0.36666666666666664,
+          "mean_response_tokens": 17619.366666666665,
+          "mean_prompt_tokens": 216.8,
+          "hit_cap_fraction": 0.1,
+          "vs_base": {
+            "paired_examples": 30,
+            "accuracy_delta": 0.0,
+            "rescues": 1,
+            "degradations": 1
+          }
+        },
+        "olympiadbench": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.66015625,
+          "mean_response_tokens": 11167.9609375,
+          "mean_prompt_tokens": 130.35546875,
+          "hit_cap_fraction": 0.015625,
+          "vs_base": {
+            "paired_examples": 512,
+            "accuracy_delta": 0.017578125,
+            "rescues": 37,
+            "degradations": 28
+          }
+        },
+        "mmlu_pro": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.58203125,
+          "mean_response_tokens": 3258.26953125,
+          "mean_prompt_tokens": 210.546875,
+          "hit_cap_fraction": 0.001953125,
+          "vs_base": {
+            "paired_examples": 512,
+            "accuracy_delta": 0.013671875,
+            "rescues": 28,
+            "degradations": 21
+          }
+        },
+        "gpqa_diamond": {
+          "schema_version": 1,
+          "examples": 198,
+          "scored_examples": 198,
+          "accuracy": 0.41919191919191917,
+          "mean_response_tokens": 8444.944444444445,
+          "mean_prompt_tokens": 245.65656565656565,
+          "hit_cap_fraction": 0.015151515151515152,
+          "vs_base": {
+            "paired_examples": 198,
+            "accuracy_delta": 0.045454545454545456,
+            "rescues": 30,
+            "degradations": 21
+          }
+        }
+      },
+      "macro_accuracy": 0.5824092171717171
+    },
+    "vanilla_opd_round4": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/vanilla_opd_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004",
+      "benchmarks": {
+        "math500": {
+          "schema_version": 1,
+          "examples": 500,
+          "scored_examples": 500,
+          "accuracy": 0.88,
+          "mean_response_tokens": 5532.374,
+          "mean_prompt_tokens": 98.94,
+          "hit_cap_fraction": 0.008,
+          "vs_base": {
+            "paired_examples": 500,
+            "accuracy_delta": -0.016,
+            "rescues": 8,
+            "degradations": 16
+          }
+        },
+        "aime25": {
+          "schema_version": 1,
+          "examples": 30,
+          "scored_examples": 30,
+          "accuracy": 0.3,
+          "mean_response_tokens": 19490.433333333334,
+          "mean_prompt_tokens": 216.8,
+          "hit_cap_fraction": 0.16666666666666666,
+          "vs_base": {
+            "paired_examples": 30,
+            "accuracy_delta": -0.06666666666666667,
+            "rescues": 1,
+            "degradations": 3
+          }
+        },
+        "olympiadbench": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.666015625,
+          "mean_response_tokens": 11200.884765625,
+          "mean_prompt_tokens": 130.35546875,
+          "hit_cap_fraction": 0.0234375,
+          "vs_base": {
+            "paired_examples": 512,
+            "accuracy_delta": 0.0234375,
+            "rescues": 38,
+            "degradations": 26
+          }
+        },
+        "mmlu_pro": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.572265625,
+          "mean_response_tokens": 3342.498046875,
+          "mean_prompt_tokens": 210.546875,
+          "hit_cap_fraction": 0.0,
+          "vs_base": {
+            "paired_examples": 512,
+            "accuracy_delta": 0.00390625,
+            "rescues": 33,
+            "degradations": 31
+          }
+        },
+        "gpqa_diamond": {
+          "schema_version": 1,
+          "examples": 198,
+          "scored_examples": 198,
+          "accuracy": 0.36363636363636365,
+          "mean_response_tokens": 8617.560606060606,
+          "mean_prompt_tokens": 245.65656565656565,
+          "hit_cap_fraction": 0.010101010101010102,
+          "vs_base": {
+            "paired_examples": 198,
+            "accuracy_delta": -0.010101010101010102,
+            "rescues": 27,
+            "degradations": 29
+          }
+        }
+      },
+      "macro_accuracy": 0.5563835227272727
+    },
+    "opsd_round4": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/opsd_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004",
+      "benchmarks": {
+        "math500": {
+          "schema_version": 1,
+          "examples": 500,
+          "scored_examples": 500,
+          "accuracy": 0.888,
+          "mean_response_tokens": 5132.184,
+          "mean_prompt_tokens": 98.94,
+          "hit_cap_fraction": 0.004,
+          "vs_base": {
+            "paired_examples": 500,
+            "accuracy_delta": -0.008,
+            "rescues": 9,
+            "degradations": 13
+          }
+        },
+        "aime25": {
+          "schema_version": 1,
+          "examples": 30,
+          "scored_examples": 30,
+          "accuracy": 0.36666666666666664,
+          "mean_response_tokens": 16480.3,
+          "mean_prompt_tokens": 216.8,
+          "hit_cap_fraction": 0.06666666666666667,
+          "vs_base": {
+            "paired_examples": 30,
+            "accuracy_delta": 0.0,
+            "rescues": 1,
+            "degradations": 1
+          }
+        },
+        "olympiadbench": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.658203125,
+          "mean_response_tokens": 10647.759765625,
+          "mean_prompt_tokens": 130.35546875,
+          "hit_cap_fraction": 0.025390625,
+          "vs_base": {
+            "paired_examples": 512,
+            "accuracy_delta": 0.015625,
+            "rescues": 37,
+            "degradations": 29
+          }
+        },
+        "mmlu_pro": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.5546875,
+          "mean_response_tokens": 3067.408203125,
+          "mean_prompt_tokens": 210.546875,
+          "hit_cap_fraction": 0.001953125,
+          "vs_base": {
+            "paired_examples": 512,
+            "accuracy_delta": -0.013671875,
+            "rescues": 22,
+            "degradations": 29
+          }
+        },
+        "gpqa_diamond": {
+          "schema_version": 1,
+          "examples": 198,
+          "scored_examples": 198,
+          "accuracy": 0.35353535353535354,
+          "mean_response_tokens": 7731.484848484848,
+          "mean_prompt_tokens": 245.65656565656565,
+          "hit_cap_fraction": 0.005050505050505051,
+          "vs_base": {
+            "paired_examples": 198,
+            "accuracy_delta": -0.020202020202020204,
+            "rescues": 17,
+            "degradations": 21
+          }
+        }
+      },
+      "macro_accuracy": 0.564218529040404
+    }
+  }
+}
