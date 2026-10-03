@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "examples": 199,
+  "scored_examples": 199,
+  "accuracy": 0.49748743718592964,
+  "mean_response_tokens": 12519.391959798995,
+  "mean_prompt_tokens": 140.18090452261308,
+  "hit_cap_fraction": 0.03015075376884422,
+  "vs_base": {
+    "paired_examples": 199,
+    "accuracy_delta": -0.04522613065326633,
+    "rescues": 6,
+    "degradations": 15
+  }
+}
