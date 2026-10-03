@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "policy": "ordinary_student_qwen-thinking",
+  "models": [
+    {
+      "name": "vanilla_opd_round4",
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/vanilla_opd_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004",
+      "inference_model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/vanilla_opd_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004"
+    }
+  ],
+  "decoding": "qwen-thinking",
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 46
+  },
+  "benchmarks": [
+    {
+      "name": "livecodebench",
+      "path": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/data/livecodebench_v6_new_175/livecodebench_v6_new_175.parquet",
+      "scorer": "livecodebench",
+      "expected_examples": 175,
+      "livecodebench": {
+        "release_version": "v6"
+      }
+    }
+  ],
+  "split": "full",
+  "devices": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "backend": "vllm",
+  "vllm": {
+    "gpu_memory_utilization": 0.9,
+    "max_num_seqs": 16,
+    "max_num_batched_tokens": 4096,
+    "enforce_eager": false
+  },
+  "batch_size": 16,
+  "max_response_tokens": 32768,
+  "max_prompt_tokens": 8192,
+  "max_examples": 0,
+  "max_model_len": 40960,
+  "context_safety_margin": 128,
+  "store_token_ids": false,
+  "thinking": true,
+  "model_family": "qwen",
+  "dtype": "bfloat16",
+  "store_text": true,
+  "trust_remote_code": false,
+  "adapter_base_model": null,
+  "parser_path": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_SUPPLEMENTARY_EXPERIMENTS/lulu/benchmark_parser.py",
+  "output_dir": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/rq1_livecodebench_v6new175_qwen3_1p7b_pass16_4b_pass1_s42/qwen3_1p7b_pass16/sample_04_seed_46",
+  "lcb_repo": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/tools/LiveCodeBench",
+  "lcb_python": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/tools/livecodebench_scorer_py312_v1/bin/python",
+  "lcb_processes": 16
+}
