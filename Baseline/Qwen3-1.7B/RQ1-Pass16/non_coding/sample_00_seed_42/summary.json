@@ -1,0 +1,311 @@
+{
+  "schema_version": 1,
+  "decoding": "qwen-thinking",
+  "thinking": true,
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42
+  },
+  "split": "full",
+  "backend": "vllm",
+  "max_examples_per_benchmark": 512,
+  "selection": "first_rows_before_sharding",
+  "models": {
+    "base": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Rona_Lulu/Lulu_outputs/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "benchmarks": {
+        "math500": {
+          "schema_version": 1,
+          "examples": 500,
+          "scored_examples": 500,
+          "accuracy": 0.892,
+          "mean_response_tokens": 5759.256,
+          "mean_prompt_tokens": 98.94,
+          "hit_cap_fraction": 0.004
+        },
+        "aime25": {
+          "schema_version": 1,
+          "examples": 30,
+          "scored_examples": 30,
+          "accuracy": 0.3333333333333333,
+          "mean_response_tokens": 17369.733333333334,
+          "mean_prompt_tokens": 216.8,
+          "hit_cap_fraction": 0.06666666666666667
+        },
+        "olympiadbench": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.64453125,
+          "mean_response_tokens": 11207.701171875,
+          "mean_prompt_tokens": 130.35546875,
+          "hit_cap_fraction": 0.02734375
+        },
+        "mmlu_pro": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.5625,
+          "mean_response_tokens": 3375.322265625,
+          "mean_prompt_tokens": 210.546875,
+          "hit_cap_fraction": 0.0
+        },
+        "gpqa_diamond": {
+          "schema_version": 1,
+          "examples": 198,
+          "scored_examples": 198,
+          "accuracy": 0.35353535353535354,
+          "mean_response_tokens": 8305.732323232323,
+          "mean_prompt_tokens": 245.65656565656565,
+          "hit_cap_fraction": 0.010101010101010102
+        }
+      },
+      "macro_accuracy": 0.5571799873737373
+    },
+    "control_ref_round4": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/no_reasoning_control_ref_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004",
+      "benchmarks": {
+        "math500": {
+          "schema_version": 1,
+          "examples": 500,
+          "scored_examples": 500,
+          "accuracy": 0.884,
+          "mean_response_tokens": 5532.974,
+          "mean_prompt_tokens": 98.94,
+          "hit_cap_fraction": 0.004,
+          "vs_base": {
+            "paired_examples": 500,
+            "accuracy_delta": -0.008,
+            "rescues": 13,
+            "degradations": 17
+          }
+        },
+        "aime25": {
+          "schema_version": 1,
+          "examples": 30,
+          "scored_examples": 30,
+          "accuracy": 0.3,
+          "mean_response_tokens": 16485.766666666666,
+          "mean_prompt_tokens": 216.8,
+          "hit_cap_fraction": 0.03333333333333333,
+          "vs_base": {
+            "paired_examples": 30,
+            "accuracy_delta": -0.03333333333333333,
+            "rescues": 3,
+            "degradations": 4
+          }
+        },
+        "olympiadbench": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.6640625,
+          "mean_response_tokens": 10862.642578125,
+          "mean_prompt_tokens": 130.35546875,
+          "hit_cap_fraction": 0.0078125,
+          "vs_base": {
+            "paired_examples": 512,
+            "accuracy_delta": 0.01953125,
+            "rescues": 38,
+            "degradations": 28
+          }
+        },
+        "mmlu_pro": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.580078125,
+          "mean_response_tokens": 3291.025390625,
+          "mean_prompt_tokens": 210.546875,
+          "hit_cap_fraction": 0.001953125,
+          "vs_base": {
+            "paired_examples": 512,
+            "accuracy_delta": 0.017578125,
+            "rescues": 31,
+            "degradations": 22
+          }
+        },
+        "gpqa_diamond": {
+          "schema_version": 1,
+          "examples": 198,
+          "scored_examples": 198,
+          "accuracy": 0.3888888888888889,
+          "mean_response_tokens": 8349.848484848484,
+          "mean_prompt_tokens": 245.65656565656565,
+          "hit_cap_fraction": 0.0,
+          "vs_base": {
+            "paired_examples": 198,
+            "accuracy_delta": 0.03535353535353535,
+            "rescues": 26,
+            "degradations": 19
+          }
+        }
+      },
+      "macro_accuracy": 0.5634059027777778
+    },
+    "vanilla_opd_round4": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/vanilla_opd_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004",
+      "benchmarks": {
+        "math500": {
+          "schema_version": 1,
+          "examples": 500,
+          "scored_examples": 500,
+          "accuracy": 0.876,
+          "mean_response_tokens": 5592.258,
+          "mean_prompt_tokens": 98.94,
+          "hit_cap_fraction": 0.004,
+          "vs_base": {
+            "paired_examples": 500,
+            "accuracy_delta": -0.016,
+            "rescues": 12,
+            "degradations": 20
+          }
+        },
+        "aime25": {
+          "schema_version": 1,
+          "examples": 30,
+          "scored_examples": 30,
+          "accuracy": 0.43333333333333335,
+          "mean_response_tokens": 18537.533333333333,
+          "mean_prompt_tokens": 216.8,
+          "hit_cap_fraction": 0.06666666666666667,
+          "vs_base": {
+            "paired_examples": 30,
+            "accuracy_delta": 0.1,
+            "rescues": 4,
+            "degradations": 1
+          }
+        },
+        "olympiadbench": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.640625,
+          "mean_response_tokens": 11727.099609375,
+          "mean_prompt_tokens": 130.35546875,
+          "hit_cap_fraction": 0.01953125,
+          "vs_base": {
+            "paired_examples": 512,
+            "accuracy_delta": -0.00390625,
+            "rescues": 32,
+            "degradations": 34
+          }
+        },
+        "mmlu_pro": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.59765625,
+          "mean_response_tokens": 3351.923828125,
+          "mean_prompt_tokens": 210.546875,
+          "hit_cap_fraction": 0.0,
+          "vs_base": {
+            "paired_examples": 512,
+            "accuracy_delta": 0.03515625,
+            "rescues": 42,
+            "degradations": 24
+          }
+        },
+        "gpqa_diamond": {
+          "schema_version": 1,
+          "examples": 198,
+          "scored_examples": 198,
+          "accuracy": 0.3888888888888889,
+          "mean_response_tokens": 8312.717171717171,
+          "mean_prompt_tokens": 245.65656565656565,
+          "hit_cap_fraction": 0.0,
+          "vs_base": {
+            "paired_examples": 198,
+            "accuracy_delta": 0.03535353535353535,
+            "rescues": 27,
+            "degradations": 20
+          }
+        }
+      },
+      "macro_accuracy": 0.5873006944444444
+    },
+    "opsd_round4": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/opsd_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004",
+      "benchmarks": {
+        "math500": {
+          "schema_version": 1,
+          "examples": 500,
+          "scored_examples": 500,
+          "accuracy": 0.866,
+          "mean_response_tokens": 5409.492,
+          "mean_prompt_tokens": 98.94,
+          "hit_cap_fraction": 0.002,
+          "vs_base": {
+            "paired_examples": 500,
+            "accuracy_delta": -0.026,
+            "rescues": 8,
+            "degradations": 21
+          }
+        },
+        "aime25": {
+          "schema_version": 1,
+          "examples": 30,
+          "scored_examples": 30,
+          "accuracy": 0.4,
+          "mean_response_tokens": 17259.666666666668,
+          "mean_prompt_tokens": 216.8,
+          "hit_cap_fraction": 0.06666666666666667,
+          "vs_base": {
+            "paired_examples": 30,
+            "accuracy_delta": 0.06666666666666667,
+            "rescues": 4,
+            "degradations": 2
+          }
+        },
+        "olympiadbench": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.669921875,
+          "mean_response_tokens": 10694.607421875,
+          "mean_prompt_tokens": 130.35546875,
+          "hit_cap_fraction": 0.013671875,
+          "vs_base": {
+            "paired_examples": 512,
+            "accuracy_delta": 0.025390625,
+            "rescues": 33,
+            "degradations": 20
+          }
+        },
+        "mmlu_pro": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.583984375,
+          "mean_response_tokens": 3050.453125,
+          "mean_prompt_tokens": 210.546875,
+          "hit_cap_fraction": 0.001953125,
+          "vs_base": {
+            "paired_examples": 512,
+            "accuracy_delta": 0.021484375,
+            "rescues": 39,
+            "degradations": 28
+          }
+        },
+        "gpqa_diamond": {
+          "schema_version": 1,
+          "examples": 198,
+          "scored_examples": 198,
+          "accuracy": 0.40404040404040403,
+          "mean_response_tokens": 7643.020202020202,
+          "mean_prompt_tokens": 245.65656565656565,
+          "hit_cap_fraction": 0.0,
+          "vs_base": {
+            "paired_examples": 198,
+            "accuracy_delta": 0.050505050505050504,
+            "rescues": 28,
+            "degradations": 18
+          }
+        }
+      },
+      "macro_accuracy": 0.5847893308080808
+    }
+  }
+}

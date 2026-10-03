@@ -1,0 +1,10 @@
+{
+  "backend": "vllm",
+  "model": "opsd_round4",
+  "shard_id": 6,
+  "examples": 217,
+  "generation_seconds": 1408.1695960680954,
+  "scoring_seconds": 1.5026999111287296,
+  "response_tokens": 1434355,
+  "generation_tokens_per_second": 1018.5953481775347
+}
