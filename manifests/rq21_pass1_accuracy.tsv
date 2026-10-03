@@ -1,0 +1,16 @@
+arm	benchmark	protocol	examples	correct	recomputed_accuracy	summary_accuracy	difference	shards	relative_directory	status
+uniform_matched	math500	pass@1	500	440	0.88	0.88	0.0	8	uniform_matched/evaluation/uniform_matched/math500	MATCH
+uniform_matched	aime25	pass@1	30	11	0.36666666666666664	0.36666666666666664	0.0	8	uniform_matched/evaluation/uniform_matched/aime25	MATCH
+uniform_matched	olympiadbench	pass@1	512	330	0.64453125	0.64453125	0.0	8	uniform_matched/evaluation/uniform_matched/olympiadbench	MATCH
+uniform_matched	mmlu_pro	pass@1	512	296	0.578125	0.578125	0.0	8	uniform_matched/evaluation/uniform_matched/mmlu_pro	MATCH
+uniform_matched	gpqa_diamond	pass@1	198	84	0.42424242424242425	0.42424242424242425	0.0	8	uniform_matched/evaluation/uniform_matched/gpqa_diamond	MATCH
+shuffled_ren	math500	pass@1	500	437	0.874	0.874	0.0	8	shuffled_ren/evaluation/shuffled_ren/math500	MATCH
+shuffled_ren	aime25	pass@1	30	9	0.3	0.3	0.0	8	shuffled_ren/evaluation/shuffled_ren/aime25	MATCH
+shuffled_ren	olympiadbench	pass@1	512	336	0.65625	0.65625	0.0	8	shuffled_ren/evaluation/shuffled_ren/olympiadbench	MATCH
+shuffled_ren	mmlu_pro	pass@1	512	294	0.57421875	0.57421875	0.0	8	shuffled_ren/evaluation/shuffled_ren/mmlu_pro	MATCH
+shuffled_ren	gpqa_diamond	pass@1	198	77	0.3888888888888889	0.3888888888888889	0.0	8	shuffled_ren/evaluation/shuffled_ren/gpqa_diamond	MATCH
+causal_matched	math500	pass@1	500	440	0.88	0.88	0.0	8	causal_matched/evaluation/causal_matched/math500	MATCH
+causal_matched	aime25	pass@1	30	13	0.43333333333333335	0.43333333333333335	0.0	8	causal_matched/evaluation/causal_matched/aime25	MATCH
+causal_matched	olympiadbench	pass@1	512	332	0.6484375	0.6484375	0.0	8	causal_matched/evaluation/causal_matched/olympiadbench	MATCH
+causal_matched	mmlu_pro	pass@1	512	290	0.56640625	0.56640625	0.0	8	causal_matched/evaluation/causal_matched/mmlu_pro	MATCH
+causal_matched	gpqa_diamond	pass@1	198	84	0.42424242424242425	0.42424242424242425	0.0	8	causal_matched/evaluation/causal_matched/gpqa_diamond	MATCH
