@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "decoding": "nemotron-thinking",
+  "thinking": true,
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42
+  },
+  "split": "full",
+  "backend": "vllm",
+  "max_examples_per_benchmark": 0,
+  "selection": "first_rows_before_sharding",
+  "models": {
+    "grpo_step8": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/nemotron_4b_grpo_8gpu_pool2048_group8_full_s42/global_step_8/model",
+      "benchmarks": {
+        "livecodebench": {
+          "schema_version": 1,
+          "examples": 175,
+          "scored_examples": 175,
+          "accuracy": 0.4857142857142857,
+          "mean_response_tokens": 19238.211428571427,
+          "mean_prompt_tokens": 588.1028571428571,
+          "hit_cap_fraction": 0.30857142857142855
+        }
+      },
+      "macro_accuracy": 0.4857142857142857
+    }
+  }
+}

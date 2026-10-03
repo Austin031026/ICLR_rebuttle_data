@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "decoding": "nemotron-thinking",
+  "thinking": true,
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42
+  },
+  "split": "full",
+  "backend": "vllm",
+  "max_examples_per_benchmark": 512,
+  "selection": "first_rows_before_sharding",
+  "models": {
+    "grpo_step8": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/nemotron_4b_grpo_8gpu_pool2048_group8_full_s42/global_step_8/model",
+      "benchmarks": {
+        "math500": {
+          "schema_version": 1,
+          "examples": 500,
+          "scored_examples": 500,
+          "accuracy": 0.928,
+          "mean_response_tokens": 5352.882,
+          "mean_prompt_tokens": 107.6,
+          "hit_cap_fraction": 0.012
+        },
+        "aime25": {
+          "schema_version": 1,
+          "examples": 30,
+          "scored_examples": 30,
+          "accuracy": 0.5666666666666667,
+          "mean_response_tokens": 20953.033333333333,
+          "mean_prompt_tokens": 222.26666666666668,
+          "hit_cap_fraction": 0.23333333333333334
+        },
+        "olympiadbench": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.74609375,
+          "mean_response_tokens": 12785.466796875,
+          "mean_prompt_tokens": 138.955078125,
+          "hit_cap_fraction": 0.115234375
+        },
+        "mmlu_pro": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.54296875,
+          "mean_response_tokens": 6863.43359375,
+          "mean_prompt_tokens": 213.6875,
+          "hit_cap_fraction": 0.01953125
+        },
+        "gpqa_diamond": {
+          "schema_version": 1,
+          "examples": 198,
+          "scored_examples": 198,
+          "accuracy": 0.5505050505050505,
+          "mean_response_tokens": 14932.217171717171,
+          "mean_prompt_tokens": 252.55555555555554,
+          "hit_cap_fraction": 0.03535353535353535
+        }
+      },
+      "macro_accuracy": 0.6668468434343435
+    }
+  }
+}
