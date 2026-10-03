@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "decoding": "qwen-thinking",
+  "thinking": true,
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42
+  },
+  "split": "full",
+  "backend": "vllm",
+  "max_examples_per_benchmark": 512,
+  "selection": "first_rows_before_sharding",
+  "models": {
+    "shuffled_ren": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/rq2_allocation_qwen3_1p7b_pool2048_b256_r4_s42/arms/shuffled_ren/train/checkpoints/round_000004",
+      "benchmarks": {
+        "math500": {
+          "schema_version": 1,
+          "examples": 500,
+          "scored_examples": 500,
+          "accuracy": 0.874,
+          "mean_response_tokens": 5486.4,
+          "mean_prompt_tokens": 98.94,
+          "hit_cap_fraction": 0.002
+        },
+        "aime25": {
+          "schema_version": 1,
+          "examples": 30,
+          "scored_examples": 30,
+          "accuracy": 0.3,
+          "mean_response_tokens": 19032.166666666668,
+          "mean_prompt_tokens": 216.8,
+          "hit_cap_fraction": 0.03333333333333333
+        },
+        "olympiadbench": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.65625,
+          "mean_response_tokens": 11719.796875,
+          "mean_prompt_tokens": 130.35546875,
+          "hit_cap_fraction": 0.02734375
+        },
+        "mmlu_pro": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.57421875,
+          "mean_response_tokens": 3369.421875,
+          "mean_prompt_tokens": 210.546875,
+          "hit_cap_fraction": 0.0
+        },
+        "gpqa_diamond": {
+          "schema_version": 1,
+          "examples": 198,
+          "scored_examples": 198,
+          "accuracy": 0.3888888888888889,
+          "mean_response_tokens": 8567.19696969697,
+          "mean_prompt_tokens": 245.65656565656565,
+          "hit_cap_fraction": 0.015151515151515152
+        }
+      },
+      "macro_accuracy": 0.5586715277777777
+    }
+  }
+}

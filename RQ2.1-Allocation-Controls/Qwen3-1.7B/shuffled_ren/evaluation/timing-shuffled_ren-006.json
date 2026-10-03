@@ -1,0 +1,10 @@
+{
+  "backend": "vllm",
+  "model": "shuffled_ren",
+  "shard_id": 6,
+  "examples": 217,
+  "generation_seconds": 1723.4916855921037,
+  "scoring_seconds": 1.9788424549624324,
+  "response_tokens": 1586412,
+  "generation_tokens_per_second": 920.4639704745601
+}
