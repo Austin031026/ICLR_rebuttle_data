@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "examples": 30,
+  "scored_examples": 30,
+  "accuracy": 0.5666666666666667,
+  "mean_response_tokens": 18745.5,
+  "mean_prompt_tokens": 216.8,
+  "hit_cap_fraction": 0.16666666666666666
+}
