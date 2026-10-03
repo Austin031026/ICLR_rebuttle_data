@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "policy": "ordinary_student_qwen-thinking",
+  "models": [
+    {
+      "name": "base",
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Rona_Lulu/Lulu_outputs/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "inference_model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Rona_Lulu/Lulu_outputs/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+    },
+    {
+      "name": "control_ref_round4",
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/no_reasoning_control_ref_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004",
+      "inference_model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/no_reasoning_control_ref_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004"
+    },
+    {
+      "name": "vanilla_opd_round4",
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/vanilla_opd_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004",
+      "inference_model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/vanilla_opd_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004"
+    },
+    {
+      "name": "opsd_round4",
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/opsd_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004",
+      "inference_model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/opsd_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004"
+    }
+  ],
+  "decoding": "qwen-thinking",
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 47
+  },
+  "benchmarks": [
+    {
+      "name": "math500",
+      "path": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/data/rq1_eval_v1/math500/full.parquet",
+      "scorer": "math",
+      "expected_examples": 500,
+      "livecodebench": null
+    },
+    {
+      "name": "aime25",
+      "path": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/data/rq1_eval_v1/aime25/full.parquet",
+      "scorer": "math",
+      "expected_examples": 30,
+      "livecodebench": null
+    },
+    {
+      "name": "olympiadbench",
+      "path": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/data/rq1_eval_v1/olympiadbench/full.parquet",
+      "scorer": "math",
+      "expected_examples": 512,
+      "livecodebench": null
+    },
+    {
+      "name": "mmlu_pro",
+      "path": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/data/rq1_eval_v1/mmlu_pro/full.parquet",
+      "scorer": "choice",
+      "expected_examples": 512,
+      "livecodebench": null
+    },
+    {
+      "name": "gpqa_diamond",
+      "path": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/data/rq1_eval_v1/gpqa_diamond/full.parquet",
+      "scorer": "choice",
+      "expected_examples": 198,
+      "livecodebench": null
+    }
+  ],
+  "split": "full",
+  "devices": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "backend": "vllm",
+  "vllm": {
+    "gpu_memory_utilization": 0.8,
+    "max_num_seqs": 16,
+    "max_num_batched_tokens": 4096,
+    "enforce_eager": false
+  },
+  "batch_size": 8,
+  "max_response_tokens": 32768,
+  "max_prompt_tokens": 4096,
+  "max_examples": 512,
+  "max_model_len": 40960,
+  "context_safety_margin": 128,
+  "store_token_ids": true,
+  "thinking": true,
+  "dtype": "bfloat16",
+  "store_text": true,
+  "trust_remote_code": false,
+  "adapter_base_model": null,
+  "parser_path": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_SUPPLEMENTARY_EXPERIMENTS/lulu/benchmark_parser.py",
+  "output_dir": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/rq1_qwen3_1p7b_pass16_32k_five_bench_s42/sample_05_seed_47",
+  "lcb_repo": null,
+  "lcb_python": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/conda/envs/lulu_probe_qwen3/bin/python",
+  "lcb_processes": 16
+}
