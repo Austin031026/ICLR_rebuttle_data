@@ -1,7 +1,7 @@
 **/.engine_cache/
-**/torch_compile_cache/
+**/.ipynb_checkpoints/
 **/__pycache__/
+**/torch_compile_cache/
 *.pyc
 *.pyo
 .DS_Store
-**/.ipynb_checkpoints/
