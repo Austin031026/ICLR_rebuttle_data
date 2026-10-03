@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "decoding": "qwen-thinking",
+  "thinking": true,
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 43
+  },
+  "split": "full",
+  "backend": "vllm",
+  "max_examples_per_benchmark": 0,
+  "selection": "first_rows_before_sharding",
+  "models": {
+    "base": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Rona_Lulu/Lulu_outputs/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "benchmarks": {
+        "livecodebench": {
+          "schema_version": 1,
+          "examples": 175,
+          "scored_examples": 175,
+          "accuracy": 0.3314285714285714,
+          "mean_response_tokens": 14562.28,
+          "mean_prompt_tokens": 603.7314285714285,
+          "hit_cap_fraction": 0.022857142857142857
+        }
+      },
+      "macro_accuracy": 0.3314285714285714
+    },
+    "control_ref_round4": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/no_reasoning_control_ref_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004",
+      "benchmarks": {
+        "livecodebench": {
+          "schema_version": 1,
+          "examples": 175,
+          "scored_examples": 175,
+          "accuracy": 0.30857142857142855,
+          "mean_response_tokens": 15767.902857142857,
+          "mean_prompt_tokens": 603.7314285714285,
+          "hit_cap_fraction": 0.06285714285714286,
+          "vs_base": {
+            "paired_examples": 175,
+            "accuracy_delta": -0.022857142857142857,
+            "rescues": 6,
+            "degradations": 10
+          }
+        }
+      },
+      "macro_accuracy": 0.30857142857142855
+    },
+    "vanilla_opd_round4": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/vanilla_opd_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004",
+      "benchmarks": {
+        "livecodebench": {
+          "schema_version": 1,
+          "examples": 175,
+          "scored_examples": 175,
+          "accuracy": 0.3142857142857143,
+          "mean_response_tokens": 15158.754285714285,
+          "mean_prompt_tokens": 603.7314285714285,
+          "hit_cap_fraction": 0.02857142857142857,
+          "vs_base": {
+            "paired_examples": 175,
+            "accuracy_delta": -0.017142857142857144,
+            "rescues": 4,
+            "degradations": 7
+          }
+        }
+      },
+      "macro_accuracy": 0.3142857142857143
+    },
+    "opsd_round4": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/opsd_qwen3_1p7b_pool2048_b256_r4_s42/training/checkpoints/round_000004",
+      "benchmarks": {
+        "livecodebench": {
+          "schema_version": 1,
+          "examples": 175,
+          "scored_examples": 175,
+          "accuracy": 0.3142857142857143,
+          "mean_response_tokens": 15248.548571428571,
+          "mean_prompt_tokens": 603.7314285714285,
+          "hit_cap_fraction": 0.06285714285714286,
+          "vs_base": {
+            "paired_examples": 175,
+            "accuracy_delta": -0.017142857142857144,
+            "rescues": 3,
+            "degradations": 6
+          }
+        }
+      },
+      "macro_accuracy": 0.3142857142857143
+    }
+  }
+}
