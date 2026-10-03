@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "decoding": "nemotron-thinking",
+  "thinking": true,
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42
+  },
+  "split": "full",
+  "backend": "vllm",
+  "max_examples_per_benchmark": 0,
+  "selection": "first_rows_before_sharding",
+  "models": {
+    "base": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/.cache/huggingface/hub/models--nvidia--Llama-3.1-Nemotron-Nano-4B-v1.1/snapshots/d552708a9d575fa8d4a690b988fd870d65279f98",
+      "benchmarks": {
+        "livecodebench": {
+          "schema_version": 1,
+          "examples": 175,
+          "scored_examples": 175,
+          "accuracy": 0.4685714285714286,
+          "mean_response_tokens": 19398.137142857144,
+          "mean_prompt_tokens": 588.1028571428571,
+          "hit_cap_fraction": 0.29714285714285715
+        }
+      },
+      "macro_accuracy": 0.4685714285714286
+    },
+    "control_ref_round4": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/nemotron_rq1_control_ref_conservative_ctx12k_seq2_chunk32_pool2048_b256_r4_s42/training/checkpoints/round_000004",
+      "benchmarks": {
+        "livecodebench": {
+          "schema_version": 1,
+          "examples": 175,
+          "scored_examples": 175,
+          "accuracy": 0.44571428571428573,
+          "mean_response_tokens": 19699.262857142858,
+          "mean_prompt_tokens": 588.1028571428571,
+          "hit_cap_fraction": 0.29714285714285715,
+          "vs_base": {
+            "paired_examples": 175,
+            "accuracy_delta": -0.022857142857142857,
+            "rescues": 7,
+            "degradations": 11
+          }
+        }
+      },
+      "macro_accuracy": 0.44571428571428573
+    }
+  }
+}

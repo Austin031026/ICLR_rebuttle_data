@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "decoding": "nemotron-thinking",
+  "thinking": true,
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42
+  },
+  "split": "full",
+  "backend": "vllm",
+  "max_examples_per_benchmark": 512,
+  "selection": "first_rows_before_sharding",
+  "models": {
+    "vanilla_opd_round4": {
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/nemotron_rq1_opd_opsd_oomsafe_ctx12k_batch8_seq8_chunk16_pool2048_b256_r4_s42/arms/vanilla_opd/train/checkpoints/round_000004",
+      "benchmarks": {
+        "math500": {
+          "schema_version": 1,
+          "examples": 500,
+          "scored_examples": 500,
+          "accuracy": 0.912,
+          "mean_response_tokens": 5470.502,
+          "mean_prompt_tokens": 107.6,
+          "hit_cap_fraction": 0.016
+        },
+        "aime25": {
+          "schema_version": 1,
+          "examples": 30,
+          "scored_examples": 30,
+          "accuracy": 0.5333333333333333,
+          "mean_response_tokens": 21555.9,
+          "mean_prompt_tokens": 222.26666666666668,
+          "hit_cap_fraction": 0.23333333333333334
+        },
+        "olympiadbench": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.74609375,
+          "mean_response_tokens": 12453.119140625,
+          "mean_prompt_tokens": 138.955078125,
+          "hit_cap_fraction": 0.091796875
+        },
+        "mmlu_pro": {
+          "schema_version": 1,
+          "examples": 512,
+          "scored_examples": 512,
+          "accuracy": 0.5546875,
+          "mean_response_tokens": 6725.7890625,
+          "mean_prompt_tokens": 213.6875,
+          "hit_cap_fraction": 0.009765625
+        },
+        "gpqa_diamond": {
+          "schema_version": 1,
+          "examples": 198,
+          "scored_examples": 198,
+          "accuracy": 0.5151515151515151,
+          "mean_response_tokens": 14693.525252525253,
+          "mean_prompt_tokens": 252.55555555555554,
+          "hit_cap_fraction": 0.0
+        }
+      },
+      "macro_accuracy": 0.6522532196969697
+    }
+  }
+}

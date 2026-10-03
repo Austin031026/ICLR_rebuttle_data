@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "policy": "ordinary_student_nemotron-thinking",
+  "models": [
+    {
+      "name": "base",
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/.cache/huggingface/hub/models--nvidia--Llama-3.1-Nemotron-Nano-4B-v1.1/snapshots/d552708a9d575fa8d4a690b988fd870d65279f98",
+      "inference_model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/.cache/huggingface/hub/models--nvidia--Llama-3.1-Nemotron-Nano-4B-v1.1/snapshots/d552708a9d575fa8d4a690b988fd870d65279f98"
+    },
+    {
+      "name": "control_ref_round4",
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/nemotron_rq1_control_ref_conservative_ctx12k_seq2_chunk32_pool2048_b256_r4_s42/training/checkpoints/round_000004",
+      "inference_model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/nemotron_rq1_control_ref_conservative_ctx12k_seq2_chunk32_pool2048_b256_r4_s42/training/checkpoints/round_000004"
+    }
+  ],
+  "decoding": "nemotron-thinking",
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42
+  },
+  "benchmarks": [
+    {
+      "name": "math500",
+      "path": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/data/rq1_eval_v1/math500/full.parquet",
+      "scorer": "math",
+      "expected_examples": 500,
+      "livecodebench": null
+    },
+    {
+      "name": "aime25",
+      "path": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/data/rq1_eval_v1/aime25/full.parquet",
+      "scorer": "math",
+      "expected_examples": 30,
+      "livecodebench": null
+    },
+    {
+      "name": "olympiadbench",
+      "path": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/data/rq1_eval_v1/olympiadbench/full.parquet",
+      "scorer": "math",
+      "expected_examples": 512,
+      "livecodebench": null
+    },
+    {
+      "name": "mmlu_pro",
+      "path": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/data/rq1_eval_v1/mmlu_pro/full.parquet",
+      "scorer": "choice",
+      "expected_examples": 1400,
+      "livecodebench": null
+    },
+    {
+      "name": "gpqa_diamond",
+      "path": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/data/rq1_eval_v1/gpqa_diamond/full.parquet",
+      "scorer": "choice",
+      "expected_examples": 198,
+      "livecodebench": null
+    }
+  ],
+  "split": "full",
+  "devices": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "backend": "vllm",
+  "vllm": {
+    "gpu_memory_utilization": 0.9,
+    "max_num_seqs": 8,
+    "max_num_batched_tokens": 4096,
+    "enforce_eager": false
+  },
+  "batch_size": 8,
+  "max_response_tokens": 32768,
+  "max_prompt_tokens": 8192,
+  "max_examples": 0,
+  "max_model_len": 40960,
+  "context_safety_margin": 128,
+  "store_token_ids": true,
+  "thinking": true,
+  "model_family": "nemotron",
+  "dtype": "bfloat16",
+  "store_text": true,
+  "trust_remote_code": true,
+  "adapter_base_model": null,
+  "parser_path": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_SUPPLEMENTARY_EXPERIMENTS/lulu/benchmark_parser.py",
+  "output_dir": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/nemotron_rq1_control_ref_conservative_ctx12k_seq2_chunk32_pool2048_b256_r4_s42/evaluation_base_control_ref_round4_32k_five_bench",
+  "lcb_repo": null,
+  "lcb_python": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/conda/envs/lulu_nemotron_tf4524/bin/python",
+  "lcb_processes": 16
+}

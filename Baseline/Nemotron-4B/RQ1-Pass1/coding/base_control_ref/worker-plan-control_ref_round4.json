@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "policy": "ordinary_student_nemotron-thinking",
+  "models": [
+    {
+      "name": "control_ref_round4",
+      "model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/nemotron_rq1_control_ref_conservative_ctx12k_seq2_chunk32_pool2048_b256_r4_s42/training/checkpoints/round_000004",
+      "inference_model": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/nemotron_rq1_control_ref_conservative_ctx12k_seq2_chunk32_pool2048_b256_r4_s42/training/checkpoints/round_000004"
+    }
+  ],
+  "decoding": "nemotron-thinking",
+  "sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42
+  },
+  "benchmarks": [
+    {
+      "name": "livecodebench",
+      "path": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/data/livecodebench_v6_new_175/livecodebench_v6_new_175.parquet",
+      "scorer": "livecodebench",
+      "expected_examples": 175,
+      "livecodebench": {
+        "release_version": "v6"
+      }
+    }
+  ],
+  "split": "full",
+  "devices": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "backend": "vllm",
+  "vllm": {
+    "gpu_memory_utilization": 0.9,
+    "max_num_seqs": 8,
+    "max_num_batched_tokens": 4096,
+    "enforce_eager": false
+  },
+  "batch_size": 8,
+  "max_response_tokens": 32768,
+  "max_prompt_tokens": 4096,
+  "max_examples": 0,
+  "max_model_len": 36864,
+  "context_safety_margin": 0,
+  "store_token_ids": true,
+  "thinking": true,
+  "model_family": "nemotron",
+  "dtype": "bfloat16",
+  "store_text": true,
+  "trust_remote_code": false,
+  "adapter_base_model": null,
+  "parser_path": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_SUPPLEMENTARY_EXPERIMENTS/lulu/benchmark_parser.py",
+  "output_dir": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/Lulu_outputs/experiments/nemotron_4b_base_control_ref_livecodebench_v6new175_pass1_s42/evaluation_retry_system_merge",
+  "lcb_repo": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/tools/LiveCodeBench",
+  "lcb_python": "/pfss/mlde/workspaces/mlde_wsp_Model_Distil/Feng_J/tools/livecodebench_scorer_py312_v1/bin/python",
+  "lcb_processes": 16
+}
